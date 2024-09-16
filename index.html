@@ -1,0 +1,4161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header/NavBar */
+
+      .header-container {
+        background-color: #13233eb2;
+        border-bottom: 1px solid #ffffff66;
+        backdrop-filter: blur(5px);
+        position: fixed;
+        z-index: 999;
+        border-radius: 0 0 16px 16px;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .my-container {
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 0;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .main-logo {
+        width: 175px;
+      }
+
+      .secondary-logo {
+        width: 70px;
+      }
+
+      .menu-container {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .menu-items {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+      }
+
+      .menu-item,
+      .contact-item {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+
+      .menu-icon {
+        width: 20px;
+        margin-right: 8px;
+      }
+
+      .whatsapp-button {
+        background-color: transparent;
+        border: 1px solid #ffffff66;
+        cursor: pointer;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+
+        .whatsapp-icon {
+          width: 20px;
+        }
+      }
+
+      @media (min-width: 1320px) {
+        .my-container {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+      }
+
+      /* Hero Section */
+
+      .hero-section {
+        position: relative;
+        height: auto;
+        justify-content: flex-start;
+        padding: 180px 0px 110px 0px;
+        background-size: cover;
+        object-fit: fill;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/3923b8897d1358fbbc3fb7bdd5f49dfca1c6e73db5bc35627c644e8e9f3bfe06?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877");
+      }
+
+      @media (max-width: 649px) {
+        .hero-section {
+          height: auto;
+          padding-bottom: 88px !important;
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 40px 48px;
+        justify-content: flex-start;
+      }
+
+      .hero-main {
+        align-self: stretch;
+        display: flex;
+        min-width: 240px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex: 1;
+        flex-basis: 0%;
+        margin: auto 0;
+      }
+
+      .hero-title-wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .hero-title {
+        color: #fff;
+        font-size: 70px;
+        font-weight: 700;
+      }
+
+      .hero-subtitle-wrapper {
+        display: flex;
+        margin-top: 56px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 24px;
+        color: #ffffff;
+        font-weight: 400;
+        letter-spacing: 0.72px;
+        line-height: 32px;
+        justify-content: center;
+      }
+
+      .hero-subtitle {
+        display: flex;
+        width: 743px;
+        max-width: 100%;
+        align-items: flex-start;
+        gap: 8px;
+        justify-content: flex-start;
+      }
+
+      .hero-subtitle-text {
+        align-self: stretch;
+        flex: 1;
+        min-width: 240px;
+        width: 743px;
+        gap: 24px;
+      }
+
+      .hashtag-container {
+        align-self: flex-start;
+        display: flex;
+        margin-top: 46px;
+        align-items: center;
+        gap: 24px;
+        font-size: 23px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: capitalize;
+        letter-spacing: 0.68px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .hashtag {
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        align-self: stretch;
+        margin: auto 0;
+      }
+
+      .hero-cta {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 0.72px;
+        margin-top: 46px;
+      }
+
+      .admission-container {
+        display: flex;
+        margin-top: 46px;
+        width: 100%;
+        flex-direction: column;
+        font-size: 16px;
+        color: #363636;
+        font-weight: 500;
+        line-height: 2;
+        justify-content: flex-start;
+      }
+
+      .admission-wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      @media (max-width: 770px) {
+        .hero-main {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .hashtag-container {
+          justify-content: center;
+        }
+
+        .admission-wrapper {
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .admission-text {
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 18px 24px;
+      }
+
+      .highlight-red {
+        color: #fb4b50;
+      }
+
+      .highlight-white {
+        color: #fff;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .diverse-learning-section {
+        background: var(--St-Tropaz-950, #13233e);
+        padding: 64px 80px;
+        text-align: center;
+      }
+
+      .diverse-section-title {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 0.96px;
+        text-transform: capitalize;
+      }
+
+      .highlight {
+        color: rgba(245, 44, 49, 1);
+      }
+
+      .stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 36px;
+        max-width: 1280px;
+      }
+
+      .stat-item {
+        flex: 1;
+        flex-basis: 0%;
+      }
+
+      .stat-number {
+        color: #fff;
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 1.92px;
+      }
+
+      .stat-description {
+        color: var(--gray-100, #f3f4f6);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 25px;
+        margin-top: 24px;
+      }
+
+      @media (max-width: 991px) {
+        /* Header */
+        .header-content {
+          padding: 12px 20px;
+        }
+
+        .logo-wrapper {
+          justify-content: center;
+        }
+
+        .menu-container {
+          justify-content: center;
+        }
+
+        .menu-items {
+          justify-content: center;
+          gap: 16px;
+        }
+
+        /* Hero section */
+
+        .hero-section {
+          padding: 170px 20px 88px;
+        }
+
+        .hero-content {
+          max-width: 100%;
+        }
+
+        .hero-main {
+          max-width: 100%;
+        }
+
+        .hero-title-wrapper {
+          max-width: 100%;
+        }
+
+        .hero-title {
+          max-width: 100%;
+          font-size: 40px;
+        }
+
+        .hero-subtitle-wrapper {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+
+        .hero-subtitle-text {
+          max-width: 100%;
+        }
+
+        .hashtag-container {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+
+        .hero-cta {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+
+        .admission-container {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+
+        .admission-wrapper {
+          max-width: 100%;
+        }
+
+        .admission-text {
+          padding: 0 20px;
+        }
+
+        .diverse-learning-section {
+          padding: 64px 20px;
+        }
+
+        .diverse-section-title {
+          max-width: 100%;
+        }
+
+        .stat-number {
+          font-size: 40px;
+        }
+
+        .stat-item {
+          white-space: initial;
+        }
+      }
+
+      /* alumni */
+
+      .alumni-section {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: 775px;
+        overflow: hidden;
+        padding: 96px 90px;
+      }
+
+      .background-image {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .alumni-content-wrapper {
+        position: relative;
+        align-self: center;
+        display: flex;
+        width: 1206px;
+        max-width: 100%;
+        flex-direction: column;
+        font-family: Orkney, sans-serif;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .subtitle {
+        font-size: 32px;
+        letter-spacing: 0.96px;
+        text-transform: capitalize;
+      }
+
+      .main-title {
+        font-size: 48px;
+        line-height: 60px;
+        letter-spacing: 1.44px;
+        text-transform: uppercase;
+        margin-top: 16px;
+      }
+
+      .highlight {
+        color: rgba(251, 75, 80, 1);
+      }
+
+      .alumni-grid {
+        position: relative;
+        display: flex;
+        margin-top: 64px;
+        width: 100%;
+        align-items: start;
+        gap: 40px 42px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .alumni-card {
+        display: flex;
+        flex-direction: column;
+        width: 216px;
+        position: relative;
+      }
+
+      .alumni-image {
+        aspect-ratio: 0.72;
+        object-fit: contain;
+        object-position: center;
+        width: 216px;
+      }
+
+      .company-logo-wrapper {
+        border-radius: 12px 12px 0 0;
+        background-color: #fff;
+        align-self: end;
+        display: flex;
+        width: 114px;
+        max-width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: center;
+        padding: 6px;
+        margin-top: -40px;
+      }
+
+      .company-logo {
+        aspect-ratio: 3.92;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+      }
+
+      .alumni-info {
+        border-radius: 12px 0 12px 12px;
+        background-color: #fff;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: Orkney, sans-serif;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      .alumni-name {
+        color: #111928;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+      }
+
+      .alumni-position {
+        color: #4b5563;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0.42px;
+      }
+
+      .mb-16 {
+        margin-bottom: 16px;
+      }
+
+      @media (max-width: 991px) {
+        .alumni-section {
+          padding: 0 20px;
+        }
+
+        .subtitle {
+          max-width: 100%;
+        }
+
+        .main-title {
+          max-width: 100%;
+          font-size: 40px;
+          line-height: 56px;
+        }
+
+        .alumni-grid {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+      }
+
+      /* ignite-section */
+
+      .ignite-section {
+        align-items: center;
+        background: var(--St-Tropaz-950, #13233e);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: Orkney, sans-serif;
+        line-height: 1;
+        justify-content: start;
+        padding: 96px 90px;
+        position: relative;
+      }
+
+      .ignite-section-img {
+        position: absolute;
+        top: 18px;
+      }
+
+      .content-wrapper {
+        display: flex;
+        width: 916px;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .main-heading {
+        color: #ffffff;
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+
+      .highlight-red {
+        color: var(--Torch-Red-400, #fb4b50);
+      }
+
+      .sub-heading {
+        color: var(--New-folder-White, #fff);
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 16px;
+      }
+
+      .cta-button {
+        border-radius: 6px;
+        border: 1px solid #00000066;
+        background: var(--Torch-Red-400, #fb4b50);
+        margin-top: 24px;
+        font-size: 24px;
+        color: var(--gray-900, #111928);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.72px;
+        padding: 18px 24px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 991px) {
+        .ignite-section {
+          padding: 0 20px;
+        }
+
+        .main-heading,
+        .sub-heading {
+          max-width: 100%;
+        }
+
+        .cta-button {
+          padding: 18px 20px;
+        }
+      }
+
+      /* awards-rating-section */
+
+      .awards-rating-section {
+        align-items: center;
+        background: var(--St-Tropaz-950, #13233e);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 96px 80px;
+      }
+
+      @media (max-width: 991px) {
+        .awards-rating-section {
+          padding: 0 20px;
+        }
+      }
+
+      .awards-section-title {
+        align-self: stretch;
+        color: var(--New-folder-White, #fff);
+        text-align: center;
+        letter-spacing: 1.44px;
+        text-transform: uppercase;
+        font-size: 48px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 991px) {
+        .awards-section-title {
+          max-width: 100%;
+          font-size: 40px;
+        }
+      }
+
+      .awards-container {
+        display: flex;
+        margin-top: 48px;
+        max-width: 100%;
+        width: 1280px;
+        align-items: center;
+        gap: 36px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 991px) {
+        .awards-container {
+          margin-top: 40px;
+        }
+      }
+
+      .award-image {
+        object-fit: contain;
+        object-position: center;
+        align-self: stretch;
+        margin: auto 0;
+      }
+
+      .award-image-1 {
+        width: 66px;
+        aspect-ratio: 0.94;
+      }
+
+      .award-image-2 {
+        width: 85px;
+        aspect-ratio: 1.21;
+      }
+
+      .award-image-3 {
+        width: 160px;
+        aspect-ratio: 2.28;
+      }
+
+      .award-image-4 {
+        width: 164px;
+        aspect-ratio: 2.34;
+      }
+
+      .award-image-5 {
+        width: 98px;
+        aspect-ratio: 1.4;
+      }
+
+      .award-image-6 {
+        width: 189px;
+        aspect-ratio: 2.7;
+      }
+
+      .award-image-7 {
+        width: 158px;
+        aspect-ratio: 2.26;
+      }
+
+      .rankings-container {
+        display: flex;
+        margin-top: 48px;
+        max-width: 100%;
+        width: 1280px;
+        align-items: center;
+        gap: 36px;
+        color: var(--New-folder-White, #fff);
+        text-align: center;
+        letter-spacing: 0.6px;
+        justify-content: center;
+        flex-wrap: wrap;
+        font: 700 20px/125% Orkney, sans-serif;
+      }
+
+      @media (max-width: 991px) {
+        .rankings-container {
+          margin-top: 40px;
+        }
+      }
+
+      .ranking-image {
+        object-fit: contain;
+        object-position: center;
+        align-self: stretch;
+        margin: auto 0;
+      }
+
+      .ranking-image-1 {
+        width: 85px;
+        aspect-ratio: 0.47;
+      }
+
+      .ranking-image-2 {
+        width: 86px;
+        aspect-ratio: 0.48;
+      }
+
+      .ranking-item {
+        align-self: stretch;
+        width: 272px;
+        margin: auto 0;
+      }
+
+      .ranking-title {
+        font-weight: 300;
+        line-height: 25px;
+      }
+
+      .ranking-score {
+        font-size: 40px;
+        line-height: 52px;
+        letter-spacing: 1.2px;
+        color: rgba(245, 44, 49, 1);
+      }
+
+      .ranking-source {
+        font-weight: 400;
+        line-height: 25px;
+      }
+
+      /* industry-associations */
+
+      .industry-associations {
+        align-self: stretch;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 90px;
+      }
+
+      @media (max-width: 991px) {
+        .industry-associations {
+          padding: 0 20px;
+        }
+      }
+
+      .industry-associations-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 48px;
+      }
+
+      @media (max-width: 991px) {
+        .industry-associations-container {
+          flex-direction: column;
+        }
+      }
+
+      .industry-content-wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        gap: 84px;
+      }
+
+      .accreditation-logos {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .recognitions-container {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 36px;
+      }
+
+      .recognitions-approvals-container {
+        width: 150%;
+      }
+
+      @media (max-width: 991px) {
+        .recognitions-approvals-container {
+          width: 100%;
+        }
+      }
+
+      .recognitions-logo-container {
+        display: flex;
+        flex-direction: column;
+        color: var(--gray-900, #111928);
+        text-align: center;
+        text-transform: capitalize;
+        justify-content: flex-start;
+        width: 170px;
+        font: 500 16px/20px Poppins, sans-serif;
+      }
+
+      .recognitions-logo-image {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 80px;
+        align-self: center;
+      }
+
+      .recognitions-logo-title {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #111928;
+      }
+
+      .separator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1px;
+        height: 72px;
+        background-color: #b1b4b9;
+      }
+
+      @media (max-width: 991px) {
+        .industry-content-wrapper {
+          max-width: 100%;
+        }
+      }
+
+      .title-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        color: #111928;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1.44px;
+        justify-content: start;
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 991px) {
+        .title-container {
+          max-width: 100%;
+          font-size: 30px;
+        }
+      }
+
+      .membership-container {
+        width: 70%;
+      }
+
+      .title {
+        width: 100%;
+      }
+
+      @media (max-width: 991px) {
+        .title {
+          max-width: 100%;
+          font-size: 30px;
+        }
+      }
+
+      .industry-logo-container {
+        display: flex;
+        margin-top: 48px;
+        width: 100%;
+        align-items: start;
+        gap: 36px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 991px) {
+        .industry-logo-container {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+      }
+
+      .logo-group {
+        display: flex;
+        min-width: 240px;
+        align-items: center;
+        gap: 36px;
+        justify-content: start;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 991px) {
+        .logo-group {
+          max-width: 100%;
+        }
+      }
+
+      .logo {
+        object-fit: contain;
+        object-position: center;
+        align-self: stretch;
+        margin: auto 0;
+      }
+
+      .logo-1 {
+        aspect-ratio: 1.72;
+        width: 103px;
+      }
+
+      .logo-2 {
+        aspect-ratio: 0.02;
+        width: 1px;
+      }
+
+      .logo-3 {
+        aspect-ratio: 1.75;
+        width: 140px;
+      }
+
+      .logo-4 {
+        aspect-ratio: 0.02;
+        width: 1px;
+      }
+
+      .logo-5 {
+        aspect-ratio: 2.45;
+        width: 196px;
+      }
+
+      .logo-6 {
+        aspect-ratio: 0.02;
+        width: 1px;
+      }
+
+      .logo-7 {
+        aspect-ratio: 1.23;
+        width: 98px;
+      }
+
+      .logo-8 {
+        aspect-ratio: 0.02;
+        width: 1px;
+      }
+
+      .logo-9 {
+        aspect-ratio: 1.29;
+        width: 103px;
+      }
+
+      .logo-10 {
+        aspect-ratio: 0.02;
+        width: 1px;
+      }
+
+      .logo-11 {
+        aspect-ratio: 1.75;
+        width: 140px;
+      }
+
+      .logo-12 {
+        aspect-ratio: 2.87;
+        width: 230px;
+      }
+
+      .logo-13 {
+        aspect-ratio: 0.02;
+        width: 1px;
+      }
+
+      .logo-14 {
+        aspect-ratio: 0.93;
+        width: 74px;
+      }
+
+      .logo-15 {
+        aspect-ratio: 0.02;
+        width: 1px;
+      }
+
+      .logo-16 {
+        aspect-ratio: 0.93;
+        width: 74px;
+      }
+
+      /* excellence-section */
+
+      .excellence-section {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: 656px;
+        justify-content: center;
+        padding: 96px 90px;
+        align-items: center;
+      }
+
+      @media (max-width: 991px) {
+        .excellence-section {
+          padding: 0 20px;
+        }
+      }
+
+      .excellence-background-image {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .excellence-section-title {
+        position: relative;
+        color: #ffffff;
+        text-align: center;
+        letter-spacing: 1.44px;
+        text-transform: uppercase;
+        font: 700 48px/60px Orkney, sans-serif;
+        text-align: center;
+        max-width: 1260px;
+      }
+
+      @media (max-width: 991px) {
+        .excellence-section-title {
+          max-width: 100%;
+          font-size: 40px;
+          line-height: 56px;
+        }
+      }
+
+      .excellence-logo-container {
+        position: relative;
+        display: flex;
+        margin-top: 48px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      @media (max-width: 991px) {
+        .excellence-logo-container {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+      }
+
+      .logo-row {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 991px) {
+        .logo-row {
+          max-width: 100%;
+        }
+      }
+
+      .excellence-logo-wrapper {
+        align-items: center;
+        border-radius: 6px;
+        border: 1px solid rgba(19, 35, 62, 0.6);
+        background: var(--New-folder-White, #fff);
+        backdrop-filter: blur(7.55px);
+        display: flex;
+        gap: 18px;
+        justify-content: flex-start;
+        padding: 14px 18px;
+      }
+
+      .logo-image {
+        aspect-ratio: 1.38;
+        object-fit: contain;
+        object-position: center;
+        width: 55px;
+      }
+
+      .logo-text {
+        aspect-ratio: 2.79;
+        object-fit: contain;
+        object-position: center;
+        width: 106px;
+        align-self: flex-start;
+        max-width: 100%;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .programs-section {
+        background: var(--gray-100, #f3f4f6);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        font-family: Orkney, sans-serif;
+        padding: 96px 90px;
+      }
+
+      .programs-content {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .programs-header {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        color: var(--gray-900, #111928);
+        text-align: center;
+      }
+
+      .programs-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 1.44px;
+        text-transform: uppercase;
+      }
+
+      .programs-description {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+        align-self: center;
+        margin-top: 24px;
+        width: 768px;
+        color: #6b7280;
+      }
+
+      .highlight-black {
+        color: #000;
+        font-weight: 700;
+      }
+
+      .unique-programs {
+        display: flex;
+        margin-top: 48px;
+        width: 100%;
+        flex-direction: column;
+        font-weight: 700;
+      }
+
+      .unique-programs-title {
+        color: var(--gray-900, #111928);
+        text-align: center;
+        font-size: 32px;
+        letter-spacing: 0.96px;
+        text-transform: capitalize;
+      }
+
+      .partner-companies {
+        display: flex;
+        margin-top: 16px;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        font-size: 20px;
+        color: var(--gray-300, #d1d5db);
+        letter-spacing: 0.6px;
+      }
+
+      .company-list {
+        color: #4b5563;
+        width: 100%;
+      }
+
+      .vertical-divider {
+        width: 1px;
+        height: 20px;
+        color: #d1d5db;
+      }
+
+      .program-types {
+        align-self: center;
+        display: flex;
+        margin-top: 48px;
+        align-items: start;
+        font-size: 14px;
+        color: var(--gray-600, #4b5563);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.42px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .program-type {
+        border: 1px solid #00000066;
+        padding: 10px 16px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #4b5563;
+      }
+
+      .program-type:nth-child(1) {
+        border-radius: 6px 0 0 6px;
+      }
+
+      .program-type:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+
+      .program-type-active {
+        background: var(--Torch-Red-500, #f52c31);
+        color: var(--New-folder-White, #fff);
+      }
+
+      .features-grid {
+        display: flex;
+        margin-top: 48px;
+        width: 100%;
+        flex-direction: column;
+        color: var(--primary-950, #14273d);
+        font: 400 24px/1 Poppins, sans-serif;
+      }
+
+      .feature-row {
+        display: flex;
+        width: 100%;
+        align-items: start;
+        gap: 24px;
+        justify-content: start;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .feature-card {
+        align-items: center;
+        border-radius: 12px;
+        border: 1px solid var(--gray-300, #d1d5db);
+        background: var(--white, #fff);
+        display: flex;
+        min-width: 240px;
+        gap: 24px;
+        overflow: hidden;
+        justify-content: start;
+        flex-wrap: wrap;
+        flex: 1;
+        flex-basis: 0%;
+        padding: 12px;
+      }
+
+      .feature-icon {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 50px;
+        align-self: stretch;
+        margin: auto 0;
+      }
+
+      .feature-title {
+        align-self: stretch;
+        flex: 1;
+        flex-basis: 0%;
+        margin: auto 0;
+      }
+
+      @media (max-width: 991px) {
+        .programs-section {
+          padding: 0 20px;
+        }
+
+        .programs-content,
+        .programs-header,
+        .programs-title,
+        .programs-description,
+        .unique-programs,
+        .unique-programs-title,
+        .partner-companies,
+        .company-list,
+        .program-types,
+        .features-grid,
+        .feature-row,
+        .feature-card,
+        .feature-title {
+          max-width: 100%;
+        }
+
+        .programs-title {
+          font-size: 40px;
+        }
+
+        .unique-programs {
+          margin-top: 40px;
+        }
+
+        .program-types {
+          margin-top: 40px;
+        }
+
+        .features-grid {
+          margin-top: 40px;
+        }
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .facilities-content {
+        align-items: center;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: start;
+        padding: 64px 90px;
+      }
+
+      @media (max-width: 991px) {
+        .facilities-content {
+          padding: 0 20px;
+        }
+      }
+
+      .facilities-header {
+        display: flex;
+        width: 786px;
+        max-width: 100%;
+        flex-direction: column;
+        font-family: Orkney, sans-serif;
+        text-align: center;
+        line-height: 1;
+        justify-content: center;
+      }
+
+      .facilities-title {
+        color: #000;
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: 1.44px;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 991px) {
+        .facilities-title {
+          max-width: 100%;
+          font-size: 40px;
+        }
+      }
+
+      .facilities-subtitle {
+        color: #6b7280;
+        font-size: 20px;
+        font-weight: 400;
+        align-self: center;
+        margin-top: 16px;
+      }
+
+      @media (max-width: 991px) {
+        .facilities-subtitle {
+          max-width: 100%;
+        }
+      }
+
+      .facilities-gallery {
+        display: flex;
+        margin-top: 48px;
+        width: 100%;
+        max-width: 1248px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+      }
+
+      @media (max-width: 991px) {
+        .facilities-gallery {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+      }
+
+      .gallery-grid {
+        display: flex;
+        width: 100%;
+        align-items: start;
+        gap: 24px;
+        justify-content: start;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 991px) {
+        .gallery-grid {
+          max-width: 100%;
+        }
+      }
+
+      .gallery-column {
+        display: flex;
+        min-width: 240px;
+        flex-direction: column;
+        justify-content: start;
+        width: 301px;
+        gap: 24px;
+      }
+
+      .gallery-image {
+        aspect-ratio: 1.64;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        min-height: 184px;
+      }
+
+      .gallery-image-tall {
+        aspect-ratio: 1.15;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        min-width: 240px;
+        min-height: 392px;
+        flex: 1;
+        flex-basis: 0%;
+      }
+
+      @media (max-width: 991px) {
+        .gallery-image-tall {
+          max-width: 100%;
+        }
+      }
+
+      .gallery-column-wide {
+        display: flex;
+        min-width: 240px;
+        flex-direction: column;
+        justify-content: start;
+        flex: 1;
+        flex-basis: 0%;
+      }
+
+      @media (max-width: 991px) {
+        .gallery-column-wide {
+          max-width: 100%;
+        }
+      }
+
+      .gallery-row {
+        display: flex;
+        width: 100%;
+        align-items: start;
+        gap: 24px;
+        justify-content: start;
+      }
+
+      @media (max-width: 991px) {
+        .gallery-row {
+          max-width: 100%;
+        }
+      }
+
+      .gallery-image-square {
+        aspect-ratio: 1.15;
+        object-fit: contain;
+        object-position: center;
+        width: 212px;
+        min-height: 184px;
+        flex: 1;
+        flex-basis: 0%;
+      }
+
+      .gallery-image-wide {
+        aspect-ratio: 2.44;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        margin-top: 24px;
+        min-height: 184px;
+      }
+
+      @media (max-width: 991px) {
+        .gallery-image-wide {
+          max-width: 100%;
+        }
+      }
+
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+      }
+
+      .swiper-pagination,
+      .students-swiper-pagination {
+        display: block !important;
+        position: relative !important;
+        z-index: 10;
+        margin-top: 1rem;
+      }
+
+      .swiper-pagination-bullet,
+      .students-swiper-pagination {
+        width: 10px;
+        height: 10px;
+        background-color: #c5d7f2;
+        border-radius: 50%;
+        opacity: 0.4;
+        margin: 0 8px;
+        transition: opacity 0.3s;
+      }
+
+      .swiper-pagination-bullet-active,
+      .students-swiper-pagination {
+        width: 28px;
+        height: 10px;
+        background-color: #1e4986;
+        opacity: 1;
+        border-radius: 1rem;
+      }
+
+      .placement-opportunity-section {
+        align-items: center;
+        background-color: #f3f6fc;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: start;
+        padding: 64px 90px;
+      }
+
+      .placement-opportunity-section .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 1260px;
+        font-size: 36px;
+      }
+
+      .swiper-row1,
+      .swiper-row2 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .placement-opportunity-section .swiper-row1,
+      .placement-opportunity-section .swiper-row2 {
+        height: 120px;
+        margin-top: 20px;
+      }
+
+      .swiper-row1 .swiper-slide,
+      .swiper-row2 .swiper-slide {
+        width: 150px !important;
+        overflow: hidden;
+        background-position: top;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .swiper-row1 .swiper-wrapper,
+      .swiper-row2 .swiper-wrapper {
+        transition-timing-function: linear !important;
+      }
+
+      .placement-logo-img {
+        width: 160px;
+        height: auto;
+      }
+
+      .footer-section {
+        width: 100%;
+        padding: 96px 90px 48px;
+        background-image: url("./footer-icon/footerBanner.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 64px;
+      }
+
+      .footer-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 46px;
+      }
+
+      .footer-logo-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 48px;
+      }
+
+      @media (max-width: 991px) {
+        .footer-logo-row {
+          flex-direction: column;
+        }
+      }
+
+      .footer-logo-container {
+        height: 83px;
+      }
+
+      .footer-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 839px;
+        width: auto;
+        text-align: center;
+      }
+
+      .description-text {
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+      }
+
+      .hashtags {
+        display: flex;
+        gap: 22px;
+      }
+
+      .hashtag {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+
+      .red {
+        color: #fb4b50;
+        font-size: 34px;
+        font-weight: 700;
+      }
+
+      .white {
+        color: white;
+        font-size: 27px;
+        font-weight: 700;
+      }
+
+      .footer-info {
+        display: flex;
+        flex-direction: column;
+        gap: 46px;
+      }
+
+      .location-info,
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 507px;
+        width: auto;
+      }
+
+      .info-header {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .map-icon,
+      .contact-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .info-title {
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .address,
+      .phone-info p,
+      .email-info p {
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .phone-info,
+      .email-info {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .phone-info img,
+      .email-info img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .national-admissions,
+      .international-admissions {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .national-admissions h4,
+      .international-admissions h4 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0.03em;
+        color: white;
+        border-bottom: 1px solid white;
+        width: fit-content;
+      }
+
+      .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .social-title {
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: 48px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 16px;
+        background: none;
+      }
+
+      @media (max-width: 991px) {
+        .footer-section {
+          padding: 30px 0px;
+        }
+
+        .footer-logo-row {
+          flex-direction: column;
+          gap: 32px;
+        }
+
+        .footer-description {
+          max-width: 100%;
+          text-align: center;
+        }
+
+        .footer-info {
+          flex-direction: column;
+          gap: 24px;
+        }
+
+        .location-info,
+        .contact-info {
+          max-width: 100%;
+        }
+
+        .address,
+        .phone-info p,
+        .email-info p {
+          font-size: 16px;
+        }
+
+        .description-text {
+          font-size: 18px;
+        }
+
+        .red {
+          font-size: 28px;
+        }
+
+        .white {
+          font-size: 24px;
+        }
+
+        .hashtags {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .national-admissions h4,
+        .international-admissions h4 {
+          font-size: 18px;
+        }
+      }
+
+      /* international-students */
+      .international-students {
+        padding: 64px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      .section-heading {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: 0.03em;
+        text-align: center;
+      }
+
+      .highlight {
+        color: red;
+      }
+
+      .student-info-container {
+        display: flex;
+        gap: 64px;
+      }
+
+      .main-image {
+        height: 568px;
+        width: 584px;
+        border-radius: 24px;
+      }
+
+      .flags-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .flags-row {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .flag-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .flag-image {
+        width: 112px;
+        height: 80px;
+      }
+
+      .country-name {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: center;
+      }
+
+      .divider {
+        border-left: 1px solid #b1b4b9;
+        height: 72px;
+      }
+
+      @media (max-width: 991px) {
+        .student-info-container {
+          flex-direction: column;
+        }
+      }
+
+      /* testimonials */
+
+      .testimonials-container {
+        align-items: center;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: start;
+        padding: 64px 90px;
+      }
+
+      .testimonials-background {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .background-overlay {
+        width: 533.27px;
+        height: 533.67px;
+        position: absolute;
+      }
+
+      .background-inner {
+        width: 533.27px;
+        height: 477.7px;
+        position: absolute;
+        background: #13233e;
+      }
+
+      .background-circle {
+        width: 152.93px;
+        height: 152.93px;
+        position: absolute;
+        top: 0;
+        left: 195.89px;
+        background: #13233e;
+      }
+
+      .testimonials-heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .heading-title {
+        text-transform: uppercase;
+      }
+
+      .heading-main {
+        color: #111928;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: 1.44px;
+      }
+
+      .heading-highlight {
+        color: #f52c31;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: 1.44px;
+      }
+
+      .heading-subtitle {
+        color: #6b7280;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+      }
+
+      .testimonials-grid {
+        display: flex;
+        gap: 48px;
+        padding-top: 110px;
+      }
+
+      .testimonial-card {
+        position: relative;
+        width: 384px;
+        height: 350px;
+        padding: 24px;
+        gap: 24px;
+        border-radius: 16px;
+        border: 1px solid #d1d5db;
+        background-color: white;
+      }
+
+      .student-image-wrapper {
+        position: absolute;
+        left: 20px;
+        top: -60px;
+      }
+
+      .student-image {
+        width: 140px;
+        height: 140px;
+        border-radius: 16px;
+      }
+
+      .testimonial-content {
+        padding-top: 70px;
+      }
+
+      .testimonial-text {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 25px;
+        color: #6b7280;
+        height: 150px;
+      }
+
+      .student-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 16px;
+      }
+
+      .student-name {
+        color: #111928;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+      }
+
+      .student-origin {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+      }
+
+      .student-course {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header/NavBar -->
+    <header class="header-container">
+      <div class="header-content my-container">
+        <div class="logo-container">
+          <div class="logo-wrapper">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3958550327e7b260c7d0385794c6dc1675d85bfc441586eb264224a378bcf028?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              class="main-logo"
+              alt="Main logo"
+            />
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/0019d4605366332a69a832b3425f17f92fcbc5f41c05a6555284ff204b5279f1?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              class="secondary-logo"
+              alt="Secondary logo"
+            />
+          </div>
+        </div>
+        <nav class="menu-container">
+          <ul class="menu-items">
+            <li class="menu-item">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/290bc0043545b0d5ad23858ae7ab5dcc9b6dfd6c6d161411909613540cf3cba4?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="menu-icon"
+                alt="Programs Icon"
+              />
+              <span class="menu-text">Programs</span>
+            </li>
+            <li class="contact-item">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/084cd357d0243bd39d717e7b21013bfde93289d78eec57378ade7e5676d5bbf9?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="menu-icon"
+                alt="Contact Icon"
+              />
+              <span class="contact-text">Toll Free: 1800-233-12345</span>
+            </li>
+            <li>
+              <button class="whatsapp-button" aria-label="Search">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/f9ac27f4782c5b51352444632edc20806fa7b2b0f555007ab6fc32f83c1911ce?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="whatsapp-icon"
+                  alt="Whatsapp Icon"
+                />
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content my-container">
+        <main class="hero-main">
+          <header class="hero-title-wrapper">
+            <h1 class="hero-title">
+              <span class="highlight-red">NAAC A</span> Graded <br />
+              <span class="highlight-white">Top</span> University
+            </h1>
+          </header>
+          <div class="hero-subtitle-wrapper">
+            <div class="hero-subtitle">
+              <p class="hero-subtitle-text">
+                Enroll yourself in an Institution which is <br />
+                <strong class="highlight-red"
+                  >Among the 50 Most Prestigious universities</strong
+                >
+                <br />
+                In India for Quality Learning
+              </p>
+            </div>
+          </div>
+          <div class="hashtag-container">
+            <h2 class="hashtag">
+              <span class="highlight-red">#</span>StudyInIndia
+            </h2>
+            <h2 class="hashtag">
+              <span class="highlight-red">#</span>StudyInGujarat
+            </h2>
+            <h2 class="hashtag">
+              <span class="highlight-red">#</span>StudyInGUNI
+            </h2>
+          </div>
+          <p class="hero-cta">
+            Transform yourself to be the
+            <span class="highlight-red">Future Leader</span>. Study at
+            <span class="highlight-red">GUNI.</span>
+          </p>
+          <div class="admission-container">
+            <div class="admission-wrapper">
+              <p class="admission-text">Admissions open for 2024-2025</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- diverse-learning -->
+    <section class="diverse-learning-section">
+      <h2 class="diverse-section-title">
+        <span class="highlight">DIVERSE</span> LEARNING PATHS AND
+        <span class="highlight">ACADEMIC</span> STRUCTURES
+      </h2>
+      <div class="stats-container my-container">
+        <div class="stat-item">
+          <p class="stat-number">11</p>
+          <p class="stat-description">Academic Discipline</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number">18</p>
+          <p class="stat-description">Institutes</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number">22</p>
+          <p class="stat-description">Centre of Excellences (CoEs)</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number">40</p>
+          <p class="stat-description">UG Programs</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number">44</p>
+          <p class="stat-description">PG Programs</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number">11</p>
+          <p class="stat-description">Diploma Programs</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number">06</p>
+          <p class="stat-description">PhD</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- industry-associations -->
+    <section class="industry-associations">
+      <div class="industry-content-wrapper my-container">
+        <div class="industry-associations-container">
+          <div class="recognitions-approvals-container">
+            <div class="title-container" style="font-size: 33px">
+              <h2 class="title">
+                <span class="highlight">Recognitions</span> & Approvals
+              </h2>
+            </div>
+            <div class="recognitions-container">
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/40fab4c4cb077ec57f84be8ecc3efcb788dd8a6af3ec5ffdb74bfbcdfb33b878?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="University Grants Commission of India logo"
+                />
+                <p class="recognitions-logo-title">
+                  University Grants Commission of India
+                </p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/fefbbc531dcd4158433a681c2dee82db2eb482b65ebd1f85fdf0acd001223743?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="AICTE New Delhi logo"
+                />
+                <p class="recognitions-logo-title">AICTE New Delhi</p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/b70fa77f6ee1d588af2a6aae2db9a3d560be2011ce67cdab2c2703a1e90a6d46?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="Pharmacy Council of India logo"
+                />
+                <p class="recognitions-logo-title">Pharmacy Council of India</p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e148d5e1337463e3924367d60f9e7cc60b0d86cca1cf743d200fa0cee624f9b?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="Council of Architecture New Delhi logo"
+                />
+                <p class="recognitions-logo-title">
+                  Council of Architecture New Delhi
+                </p>
+              </div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="Ministry_of_Ports.svg"
+                  class="recognitions-logo-image"
+                  alt="Ministry of Ports logo"
+                />
+                <p class="recognitions-logo-title">
+                  Ministry of Shipping Government of India
+                </p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="Indian Nursing Council.svg"
+                  class="recognitions-logo-image"
+                  alt="Indian Nursing Council logo"
+                />
+                <p class="recognitions-logo-title">Indian Nursing Council</p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="Directorate General of Shipping.svg"
+                  class="recognitions-logo-image"
+                  alt="Directorate General of Shipping logo"
+                />
+                <p class="recognitions-logo-title">
+                  Directorate General of Shipping
+                </p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="Department of Scientific and Industrial Research.svg"
+                  class="recognitions-logo-image"
+                  alt="Department of Scientific and Industrial Research logo"
+                />
+                <p class="recognitions-logo-title">
+                  Department of Scientific and Industrial Research
+                </p>
+              </div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="gujarat Nursing Council.svg"
+                  class="recognitions-logo-image"
+                  alt="gujarat Nursing Council logo"
+                />
+                <p class="recognitions-logo-title">gujarat Nursing Council</p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="gujarat state council for physiotherapy.svg"
+                  class="recognitions-logo-image"
+                  alt="gujarat state council for physiotherapy logo"
+                />
+                <p class="recognitions-logo-title">
+                  gujarat state council for physiotherapy
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="membership-container">
+            <div class="title-container" style="font-size: 33px">
+              <h2 class="title">MEMBERSHIP</h2>
+            </div>
+            <div class="recognitions-container">
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5aed8abf6f9dfa2e21b217e06c827475af8f4edb158938cb881b7fe8a90d733?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="The Association of Commonwealth Universities logo"
+                />
+                <p class="recognitions-logo-title">
+                  The Association of Commonwealth Universities
+                </p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c25c5a4e2f51f39433909f4c575029bf6b5cfba733e6a1c85ca5f0bfd655ec3e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="association of Indian universities logo"
+                />
+                <p class="recognitions-logo-title">
+                  association of Indian universities
+                </p>
+              </div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ee4b35230a7ed71aaa04875fb5967d66eac59e256e7ab9fc50adf7805901c30?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="international association of universities logo"
+                />
+                <p class="recognitions-logo-title">
+                  international association of universities
+                </p>
+              </div>
+              <div class="separator"></div>
+              <div class="recognitions-logo-container">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/5c4d23cad567f0b1c52f32ab252dd9b94a5a472bd6b339fe97600ff7b590eb26?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="recognitions-logo-image"
+                  alt="Association of the Universities of Asia and the Pacific logo"
+                />
+                <p class="recognitions-logo-title">
+                  Association of the Universities of Asia and the Pacific
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="industry-container">
+          <div class="title-container">
+            <h2 class="title">
+              MEMBERSHIP WITH
+              <span class="highlight">INDUSTRY ASSOCIATIONS</span>
+            </h2>
+          </div>
+          <div class="industry-logo-container">
+            <div class="logo-group">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/77701bba2789f815df8fe58c4fe8f94ce0d2326871803310342afb117dbddf69?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-1"
+                alt="Industry association logo 1"
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/794d25e7c390c6213bdea2c23f452bf6e6679c3ae1e8c92e488099934b2982b5?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-2"
+                alt=""
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d18f7a69a724057c73860b4a9092be95d4d26a68315b500ed3a597041aa1cef8?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-3"
+                alt="Industry association logo 3"
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/31ef6c37bf073cf2bb715f4bc9e5127f9f7b0a67df528e44fc3329dbeb7ae046?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-4"
+                alt=""
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a5005e7b34788dc927d880e773c2d34c2c43764bc71394e85579c89d9cbc938?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-5"
+                alt="Industry association logo 5"
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/8f4ebb6d800bb60fe0e311a2c0be489b150e7d3aba85f959bab2e44aaf047ac3?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-6"
+                alt=""
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d1b7933966167569351fcd0da5be74a69aa2d063216ae7e1acb8d79fbd01daa?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-7"
+                alt="Industry association logo 7"
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/56f6665ed95627ff77d522b3604987478f50c8585f07c44d53872b177728208e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-8"
+                alt=""
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/711b9ea40835c978228b2bdf3e30a5be3f57042b2a0af2994e0c1e52fb2e71dc?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-9"
+                alt="Industry association logo 9"
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/585a3a28102b37be5449f35f55f027484d5f276203b624773e16c905ee4effc9?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-10"
+                alt=""
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bfb272dc217289406989ef184cde575b64403d6e8224594a977342b82ad8f06?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-11"
+                alt="Industry association logo 11"
+              />
+            </div>
+            <div class="logo-group">
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/476a15f86e45199a7a11b47bd8c41ac92407b75b6634900d1c6a4cd7e212fe7e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-12"
+                alt="Industry association logo 12"
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/794d25e7c390c6213bdea2c23f452bf6e6679c3ae1e8c92e488099934b2982b5?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-13"
+                alt=""
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/af78531a46a25f498a6f0dcc246308c5533682df47b37118b105b82b40b54ff8?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-14"
+                alt="Industry association logo 14"
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/794d25e7c390c6213bdea2c23f452bf6e6679c3ae1e8c92e488099934b2982b5?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-15"
+                alt=""
+              />
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/7fa42fc3436fb42b69e3e6616bf7431dbc8240ad2fa0f00ad05d34633ac555d1?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                class="logo logo-16"
+                alt="Industry association logo 16"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- awards-rating-section -->
+    <section class="awards-rating-section">
+      <h2 class="awards-section-title">AWARDS & RATING</h2>
+      <div class="awards-container">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/871d1c32ebf1695d5dd06aa5570adf35d51875eddf772ce0f2c7438d380c70df?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Award 1"
+          class="award-image award-image-1"
+          loading="lazy"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb8b7bb4fe39e6ab3b5065efe0cb5cfe1af7206024e74cbf273217094604b210?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Award 2"
+          class="award-image award-image-2"
+          loading="lazy"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/01b491c47f12caefb6d40d6f8f4e365fca901da3aaf4a0cf78d43c43a3fc55a3?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Award 3"
+          class="award-image award-image-3"
+          loading="lazy"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5401f1a36215f6521ee52e176385d485bf07d538e509935967034fc6409f0009?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Award 4"
+          class="award-image award-image-4"
+          loading="lazy"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2aa65cb8752dc066c6f02e3f66484f8357bc417120e3715b6082824bdb9c4f7a?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Award 5"
+          class="award-image award-image-5"
+          loading="lazy"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/4cd9e53cfa0798f26c129e5b2e018ca9d41f7aba6094aab8a3c3e99494d8d3c9?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Award 6"
+          class="award-image award-image-6"
+          loading="lazy"
+        />
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1bf2998eec9ad3057f37a6c87a6fc7218fec62fda30f74986dd215f4581bc0da?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Award 7"
+          class="award-image award-image-7"
+          loading="lazy"
+        />
+      </div>
+      <div class="rankings-container">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/6b58b9871d3fefc71c0e94e0df79d54ddd9047fe7af052bba9fe290d497429be?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Ranking Icon 1"
+          class="ranking-image ranking-image-1"
+          loading="lazy"
+        />
+        <div class="ranking-item">
+          <p class="ranking-title">Pharmacy Rank</p>
+          <p class="ranking-score">66-96</p>
+          <p class="ranking-source">By India Today Rankings 2021</p>
+        </div>
+        <div class="ranking-item">
+          <p class="ranking-title">Pharmacy Rank</p>
+          <p class="ranking-score">90-135</p>
+          <p class="ranking-source">By India Today Rankings 2022</p>
+        </div>
+        <div class="ranking-item">
+          <p class="ranking-title">Innovation Rank</p>
+          <p class="ranking-score">92-142</p>
+          <p class="ranking-source">By India Today Rankings 2023</p>
+        </div>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/02a06620ecfcc7e5c792b61707d1325aa031a4facc3571934130f3b574ddfab0?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+          alt="Ranking Icon 2"
+          class="ranking-image ranking-image-2"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- excellence-section -->
+    <section class="excellence-section">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/daf6257e7b0ba7e5be5b910752ce65825ab44ea23566f203270a9382c0bd3cd9?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+        alt=""
+        class="excellence-background-image"
+      />
+      <h2 class="excellence-section-title">
+        Centre of
+        <span class="highlight-red">Excellence</span> and
+        <span class="highlight-red">Industry</span> Associations
+      </h2>
+      <div class="excellence-logo-container">
+        <div class="logo-row">
+          <div class="excellence-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7af525d37045f1b3904dc32a636f33a8aeca9504d075643684d82206a1cf7c30?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 1"
+              class="logo-image"
+            />
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/69212df7f026a4141ec0b2adeb490fe9c519be7c7fab92c5e075b5b3d12e988d?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 1 text"
+              class="logo-text"
+            />
+          </div>
+          <div class="excellence-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1634ccf1547d8ccca0f434f85b2232eda4db5b5355ab5dc257df8e10a0e25315?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 2"
+              class="logo-image"
+              style="aspect-ratio: 3.19; width: 128px"
+            />
+          </div>
+          <div
+            class="excellence-logo-wrapper"
+            style="min-width: 240px; width: 268px"
+          >
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/847075dd7e31603ac96086f67eb6faab1c4c3d4e1da2aadd6a70a2411bb22166?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 3"
+              class="logo-image"
+              style="aspect-ratio: 5.81; width: 232px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 146px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6375b254e111461033143bfc7ab0001d2263d8ea6db77395924eb41054ab7a2e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 4"
+              class="logo-image"
+              style="aspect-ratio: 2.75; width: 110px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 136px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a073cd3341665727b2c8e3d9bf0a709629c5a473eb02a76c7310d3c89eb81e6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 5"
+              class="logo-image"
+              style="aspect-ratio: 2.5; width: 100px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/88e45092736a773b094234fc5a3465de4473052be2fe0a0835da4bb8082c7391?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 6"
+              class="logo-image"
+              style="aspect-ratio: 2.55; width: 102px"
+            />
+          </div>
+        </div>
+        <div class="logo-row" style="margin-top: 16px">
+          <div class="excellence-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d5111e7752b84ad7603d5655ea570eb2c6a31b437237715a9baaeba39234fa4b?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 7"
+              class="logo-image"
+              style="aspect-ratio: 2.45; width: 98px"
+            />
+          </div>
+          <div
+            class="excellence-logo-wrapper"
+            style="min-width: 240px; width: 276px"
+          >
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6adeb18590da9d397b16eac4ad4522b5051757895a3fd001a004e3e36c0debc?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 8"
+              class="logo-image"
+              style="aspect-ratio: 5.99; width: 240px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 142px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/b35092992b894a5010bca4225c3b7c76856630b7d0b48c07406f964bd0b4cc39?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 9"
+              class="logo-image"
+              style="aspect-ratio: 2.65; width: 106px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 210px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/432f4169715f5fe3b1ffc81bfdc42849813c4e00e57a1983b0fe8fc6b6b3eb7b?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 10"
+              class="logo-image"
+              style="aspect-ratio: 4.35; width: 174px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 182px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb10faf35d445fb5b2a67e56528d380c308786e7fcab70ce9112124880796a8b?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 11"
+              class="logo-image"
+              style="aspect-ratio: 3.65; width: 146px"
+            />
+          </div>
+        </div>
+        <div class="logo-row" style="margin-top: 16px">
+          <div class="excellence-logo-wrapper" style="width: 196px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/75ec5fc27b44160f603f4ae90845717a58dcc9130676abe6662d335bc036d925?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 12"
+              class="logo-image"
+              style="aspect-ratio: 4; width: 160px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 100px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/26d67dd6892b23b6c1dac0b7df49d6d6d7bb2167ab31c19edc66bf50de303253?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 13"
+              class="logo-image"
+              style="aspect-ratio: 1.6; width: 64px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 190px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba8a783e425b590b6f87a59cbc3a51868845e8e86eeea0abf8c2f3fc4e380eb2?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 14"
+              class="logo-image"
+              style="aspect-ratio: 3.85; width: 154px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 154px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6bba2064d4abed7ba3e2781dcf75a3d497a18ff9a78d984cc37bf4a9584eac7?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 15"
+              class="logo-image"
+              style="aspect-ratio: 2.95; width: 118px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 122px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/72679ee86ce2e1c561e62679363015f6f2de2b3d93cc3b248433764cd89fab5f?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 16"
+              class="logo-image"
+              style="aspect-ratio: 2.15; width: 86px"
+            />
+          </div>
+        </div>
+        <div class="logo-row" style="margin-top: 16px">
+          <div class="excellence-logo-wrapper" style="width: 108px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/00bc26b373c428c40bfff957c0c60fb6786c4f8ed47abe452ad09e4581ba6b75?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 17"
+              class="logo-image"
+              style="aspect-ratio: 1.8; width: 72px"
+            />
+          </div>
+          <div class="excellence-logo-wrapper" style="width: 152px">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d7d8782d128a128d54b443af41b7a3999a71e8099f2ff393fe8c54b991965f11?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Logo 18"
+              class="logo-image"
+              style="aspect-ratio: 2.9; width: 116px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- programs-section -->
+    <section class="programs-section">
+      <div class="programs-content my-container">
+        <header class="programs-header">
+          <h2 class="programs-title">
+            <span class="highlight-red">Programs</span> offered
+          </h2>
+          <p class="programs-description">
+            Here we offer
+            <span class="highlight-black">100+</span> Industry-linked,
+            Employability-enhancing, and Heterogeneous Diploma, Bachelors and
+            Masters Programs. Grab this
+            <span class="highlight-black">opportunity</span> of designing your
+            <span class="highlight-black">promising career</span>.
+          </p>
+        </header>
+        <div class="unique-programs">
+          <h3 class="unique-programs-title">
+            Unique Programs offered by Ganpat University in association with
+          </h3>
+          <div class="partner-companies">
+            <p class="company-list">
+              IBM <span class="vertical-divider">|</span> SAS
+              <span class="vertical-divider">|</span> TCS
+              <span class="vertical-divider">|</span> e-Infochips
+              <span class="vertical-divider">|</span> Ascendum
+              <span class="vertical-divider">|</span> Shalby Hospital
+              <span class="vertical-divider">|</span>
+              Logistic Skill Council
+            </p>
+          </div>
+        </div>
+        <nav class="program-types" aria-label="Program Types">
+          <a
+            href="#diploma"
+            class="program-type program-type-active"
+            data-type="diploma"
+            >Diploma</a
+          >
+          <a href="#pg-diploma" class="program-type" data-type="pg-diploma"
+            >PG-Diploma</a
+          >
+          <a
+            href="#under-graduation"
+            class="program-type"
+            data-type="under-graduation"
+            >Under Graduation</a
+          >
+          <a
+            href="#maritime-studies"
+            class="program-type"
+            data-type="maritime-studies"
+            >Maritime Studies</a
+          >
+          <a
+            href="#post-graduation"
+            class="program-type"
+            data-type="post-graduation"
+            >Post-Graduation</a
+          >
+          <a href="#phd" class="program-type" data-type="phd">Ph.D</a>
+          <a
+            href="#certificate"
+            class="program-type program-type-last"
+            data-type="certificate"
+            >Certificate</a
+          >
+        </nav>
+
+        <div class="features-grid">
+          <div class="feature-content" data-type="diploma">
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ab67ae0917bdf8ec0c76813b4eaf708f87d1b4b3f7c57f2c36859b9ef7e2367?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Computer icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Computer</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c73fa166fbee3cce2c296f73e59e4e0d2a2c924b7ff10b48fa12ba27708f5bd6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Information Technology icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Information Technology</h4>
+              </article>
+            </div>
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/cfc595731dbad4c72cdb2d91c6e21fdbc7fac86387953ff9fb50b85c84ab698e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Civil Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Civil</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/68742df0abc73043a931b92444a8855032d1cdf65a9ddf22b66fbc9f11249b9c?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Electrical Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Electrical</h4>
+              </article>
+            </div>
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb78d4017d906a2dc12f015d7bc133be2429a44247d135f97fb10145ccc8ee6f?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Mechanical Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Mechanical</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf743618a821d91eacb01c3a812a2ee341385fd2764432aad0d5eabb36d652e3?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Automobile Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Automobile</h4>
+              </article>
+            </div>
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/3d915fa655e16a10bf5eb2fb4401a153f2c0509aae58fa2dbf73b2d4d20b677f?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Mechatronics icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Mechatronics</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/6932f167ebc69fcda16c8c31d5d4104abb9c78cdb81cdfd5aaa1f8fadcb32935?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Petrochemical Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Petrochemical</h4>
+              </article>
+            </div>
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0d3850ed85033e551d552fcd5ae022446357491503aaf1d1e398712953222ef?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Electronics & Communication Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">
+                  Electronics & Communication Engineering
+                </h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1f454520ad96b5a6f135cdc2642015f570aa42b06d751d46a12a132d66208be?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Agriculture Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Agriculture Engineering</h4>
+              </article>
+            </div>
+          </div>
+          <div
+            class="feature-content"
+            data-type="pg-diploma"
+            style="display: none"
+          >
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ab67ae0917bdf8ec0c76813b4eaf708f87d1b4b3f7c57f2c36859b9ef7e2367?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Advanced Computing icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Advanced Computing</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c73fa166fbee3cce2c296f73e59e4e0d2a2c924b7ff10b48fa12ba27708f5bd6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Artificial Intelligence icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Artificial Intelligence</h4>
+              </article>
+            </div>
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/cfc595731dbad4c72cdb2d91c6e21fdbc7fac86387953ff9fb50b85c84ab698e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Cybersecurity icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Cybersecurity</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/68742df0abc73043a931b92444a8855032d1cdf65a9ddf22b66fbc9f11249b9c?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Data Science icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Data Science</h4>
+              </article>
+            </div>
+          </div>
+          <div
+            class="feature-content"
+            data-type="under-graduation"
+            style="display: none"
+          >
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ab67ae0917bdf8ec0c76813b4eaf708f87d1b4b3f7c57f2c36859b9ef7e2367?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="B.Tech in Computer Science icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">B.Tech in Computer Science</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c73fa166fbee3cce2c296f73e59e4e0d2a2c924b7ff10b48fa12ba27708f5bd6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="B.Tech in Information Technology icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">B.Tech in Information Technology</h4>
+              </article>
+            </div>
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/cfc595731dbad4c72cdb2d91c6e21fdbc7fac86387953ff9fb50b85c84ab698e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="B.Tech in Civil Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">B.Tech in Civil Engineering</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/68742df0abc73043a931b92444a8855032d1cdf65a9ddf22b66fbc9f11249b9c?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="B.Tech in Mechanical Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">B.Tech in Mechanical Engineering</h4>
+              </article>
+            </div>
+          </div>
+          <div
+            class="feature-content"
+            data-type="maritime-studies"
+            style="display: none"
+          >
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ab67ae0917bdf8ec0c76813b4eaf708f87d1b4b3f7c57f2c36859b9ef7e2367?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Marine Engineering icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Marine Engineering</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/c73fa166fbee3cce2c296f73e59e4e0d2a2c924b7ff10b48fa12ba27708f5bd6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Naval Architecture icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Naval Architecture</h4>
+              </article>
+            </div>
+            <div class="feature-row">
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/cfc595731dbad4c72cdb2d91c6e21fdbc7fac86387953ff9fb50b85c84ab698e?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Oceanography icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Oceanography</h4>
+              </article>
+              <article class="feature-card">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/68742df0abc73043a931b92444a8855032d1cdf65a9ddf22b66fbc9f11249b9c?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  alt="Maritime Logistics icon"
+                  class="feature-icon"
+                />
+                <h4 class="feature-title">Maritime Logistics</h4>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- facilities-content -->
+    <section id="facilities" class="facilities-content">
+      <header class="facilities-header">
+        <h2 class="facilities-title">
+          <span>GUNI</span>
+          <span class="highlight-red">facilities</span>
+        </h2>
+        <p class="facilities-subtitle">
+          Student-Centric Facilities for a Vibrant Campus Experience
+        </p>
+      </header>
+
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- slide 1 -->
+          <div class="swiper-slide">
+            <div class="facilities-gallery">
+              <div class="gallery-grid">
+                <div class="gallery-column">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c33bdd2923ba895c5a6c094c8eff2984498c79180eb26c6709fdc7fc37dd66dc?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 1"
+                  />
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/e7a1a44271d854a0a08bea084d4fce7109d4b3bd2877c369642a2cd6795c2a2f?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 2"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/e3abaaff8d2322978079672d5350a5fbc18ebf29d1033dd6a9915c460dae24f6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="gallery-image-tall"
+                  alt="Campus facility 3"
+                />
+                <div class="gallery-column-wide">
+                  <div class="gallery-row">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ca8768785912f8da7d393678576fe665ebdaef86f47d56976ab4d9bf16762ce?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 4"
+                    />
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/70f1d0a394f59cd66b5d327a97ae8a02d6d7bcbcd9e45730ae89655202f24bf6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 5"
+                    />
+                  </div>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/40f19c49f31bd11c6af22fb1e6d7f8da058ff7cbd401a3b06abb87dafec8ae47?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image-wide"
+                    alt="Campus facility 6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="facilities-gallery">
+              <div class="gallery-grid">
+                <div class="gallery-column">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/293f523389209958ec97d98c1877630dbedc776130f361b70ca7071fd420bdab?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Fitness equipment"
+                  />
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/951e246039f11f1d7500ee21cc5eb3dbd862b8fe672c00c3168e2796c61af7f7?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Workout session"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/76cfa8ddd864b5e78cd01cc4360136db372e5ada4aaea305376a822bab264a9d?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="gallery-image-tall"
+                  alt="Full body workout demonstration"
+                />
+                <div class="gallery-column-wide">
+                  <div class="gallery-row">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7fe24274015b6a3e7faa429c70fa7c667db21d099b152eb15f2c4fcc8db9fef?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Yoga pose"
+                    />
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/3550c02881f78418d4c6c8f95d13a3ab8b374605081b768d0e178ba029ac94b6?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Weight lifting"
+                    />
+                  </div>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecacad7823d575efc05fa7825b043d1199b23c1f0465c159224773dcd9150668?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image-wide"
+                    alt="Group fitness class"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="facilities-gallery">
+              <div class="gallery-grid">
+                <div class="gallery-column">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/a1e2e44ed07e0c4cf9a896550852e52313c75da43c16b809ac6e4d2f91d86063?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 1"
+                  />
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cd152221b96001f8890998428dedef1153ba38d23e9259d91207407ed23b213?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 2"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/9ed0adf573b49dd0bd0460b29aebfb2a5b2162c02b02568a5fb374545bb44b8c?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="gallery-image-tall"
+                  alt="Campus facility 3"
+                />
+                <div class="gallery-column-wide">
+                  <div class="gallery-row">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/ddc6005893d62c141e295c4b74df296bac7c1090e341ac70abbc08ebf5ce93f7?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 4"
+                    />
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/77a176d573e79313ee7fcdb15895c26a5e36284d26d23cd8af5a1396a2ffd64a?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 5"
+                    />
+                  </div>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c49cb4a78d31fb15702eb2cdc3df672b04295b5ef3ca6bb12a884e71a3d55aec?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image-wide"
+                    alt="Campus facility 6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="facilities-gallery">
+              <div class="gallery-grid">
+                <div class="gallery-column">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9bca85ded1faf6e3d3c3066a686beae03ba5dea8c254c3ad8c5489e3ff36875a?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 1"
+                  />
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/2be33ccc2fea800ac6165c59c0206fe8a9cb9368f0a805d3689042ba4285936a?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 2"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/52746a8f5d7da51e7b47dc0bd8150fbb8db5433cf6c262c0292fb45371922a61?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="gallery-image-tall"
+                  alt="Campus facility 3"
+                />
+                <div class="gallery-column-wide">
+                  <div class="gallery-row">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/67aa1b0a0c268e5dad67c5d7287b22340eefcce2560549106fceba328ee0b7b4?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 4"
+                    />
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/969bd934f9b9533b5f295a54e9dcaf900baaa5f27a78a06d3d987273186d6553?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 5"
+                    />
+                  </div>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/353efdd964f9e290d3a530fa7db1a7d3236e84a6ea4cdcf88d70e8837f381fbf?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image-wide"
+                    alt="Campus facility 6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="facilities-gallery">
+              <div class="gallery-grid">
+                <div class="gallery-column">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c60be5068d1f48d55b5513759904ad8a62a74198ceecce303c4b09caecb6dc03?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 1"
+                  />
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/04a6582ea91609befc179cd9f0589bca00a08f4dde82f39c211e057d59f64033?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 2"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9c8f37c2f703861e1f115e0d6d6a30c47a03bcfeaf013f0fa0ed96e790ea12a?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="gallery-image-tall"
+                  alt="Campus facility 3"
+                />
+                <div class="gallery-column-wide">
+                  <div class="gallery-row">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/21e5fa2cf938ca4230c0a75265b83c7282ff0ca737603a403339d5925f777271?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 4"
+                    />
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/84976ecc83aab387bcafbf002fc8d3bd5d1475ed2cbd9d0f2adb0ee8b3a6c1a1?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 5"
+                    />
+                  </div>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c9bc71173b773a588a8bf6557b0f26f5eefe0277928e316f150b4de3ba07711d?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image-wide"
+                    alt="Campus facility 6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 6 -->
+          <div class="swiper-slide">
+            <div class="facilities-gallery">
+              <div class="gallery-grid">
+                <div class="gallery-column">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/4ded181835658001065ca6ad4cd0cce6f1fce6f6325f6d055d31b99bc3636996?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 1"
+                  />
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/1acd1c1b4dff1c7217ad271f5db5855760fecd67c692b6b96c2039ca9d7ef299?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image"
+                    alt="Campus facility 2"
+                  />
+                </div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/0a4881ec87d9b9f5deb542ecdaf815cc4c38c03d6fc38f4df1389528df3fec53?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                  class="gallery-image-tall"
+                  alt="Campus facility 3"
+                />
+                <div class="gallery-column-wide">
+                  <div class="gallery-row">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/7453762651399c27ed776dfd9a87fe078ab5a53a9ff0014dc4f289daa66186a5?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 4"
+                    />
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/84976ecc83aab387bcafbf002fc8d3bd5d1475ed2cbd9d0f2adb0ee8b3a6c1a1?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                      class="gallery-image-square"
+                      alt="Campus facility 5"
+                    />
+                  </div>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/7caf93614d547e573c4ccc4c60fd961bb161515153e3f542b195720950a18f6b?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+                    class="gallery-image-wide"
+                    alt="Campus facility 6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Placement Opportunity section -->
+    <section class="placement-opportunity-section">
+      <header class="header">
+        <h2 class="title">
+          PLACEMENT <span class="highlight-red">OPPORTUNITIES</span> FROM
+          TRUSTED <span class="highlight-red">INDUSTRY</span> CONNECTIONS
+        </h2>
+      </header>
+
+      <!-- First Row Slider (moves right) -->
+      <div class="swiper-row1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="cipla.svg" alt="Logo 1" class="placement-logo-img" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row Slider (moves left) -->
+      <div class="swiper-row2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="ultratech.svg" alt="Logo 4" class="placement-logo-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- alumni-section -->
+    <section class="alumni-section">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d408f482e20d49d4b9ce0565543ebb648e960bac39b7cc851eb50e80d50c082?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+        alt=""
+        class="background-image"
+      />
+      <div class="alumni-content-wrapper">
+        <h2 class="subtitle">Become a Part of the World's</h2>
+        <h1 class="main-title">
+          <span class="highlight">Leading</span> Companies By joining a Network
+          Of
+          <span class="highlight">Successful Alumni</span>
+        </h1>
+      </div>
+      <div class="alumni-grid">
+        <article class="alumni-card">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/460f929cfc1c6951c4c64764601ef003ff33b38e328b495d32109df0b740b616?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+            alt="Heli Solanki"
+            class="alumni-image"
+          />
+          <div class="company-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/70fd2a7b09e454034a449bf1e4b02bc70edda42d63c5c3697b2fe9bf71053001?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Company logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="alumni-info">
+            <h3 class="alumni-name">Heli Solanki</h3>
+            <p class="alumni-position">Merchant Navy Girl Officer Cadet</p>
+          </div>
+        </article>
+        <article class="alumni-card">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/08f496cedb4e502c9a07c44561ee6c4cf8ad3c98e11381095c0d3a4c6a64deaa?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+            alt="Rahil Mansuri"
+            class="alumni-image"
+          />
+          <div class="company-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/4fa7bf7033d51b9cd971d2e7f982f5c1da1cedbcd7a1437b813aa18620d68176?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Company logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="alumni-info">
+            <h3 class="alumni-name">Rahil Mansuri</h3>
+            <p class="alumni-position mb-16">Senior Software Engineer</p>
+          </div>
+        </article>
+        <article class="alumni-card">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/033c92678cd4f55f25551d005421a54f6e8079f6a4132c51f4991edcbd321328?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+            alt="Brinda Kamani"
+            class="alumni-image"
+          />
+          <div class="company-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b902ede320b20453614b1f19b473fccf3aae430dcc1926d7c98affb0e087644?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Company logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="alumni-info">
+            <h3 class="alumni-name">Brinda Kamani</h3>
+            <p class="alumni-position">
+              Vice President of Sales & Customer Success
+            </p>
+          </div>
+        </article>
+        <article class="alumni-card">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4068df90c9558b16e6e840d9c72d38339815af7d50cf31b87c7bd233fd6f7143?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+            alt="Vaibhav Mehta"
+            class="alumni-image"
+          />
+          <div class="company-logo-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c3a36992b71d638dfb4580af8efdc764b3a1b7b7e60a292919ce7bd9935339d?placeholderIfAbsent=true&apiKey=5f97e801b2424a63b6afe335f4dc2877"
+              alt="Company logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="alumni-info">
+            <h3 class="alumni-name">Vaibhav Mehta</h3>
+            <p class="alumni-position mb-16">Software Engineer</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- testimonial-section -->
+    <section class="testimonials-container">
+      <div class="testimonials-background my-container">
+        <div class="background-overlay">
+          <img src="./testimonials/bgImage.svg" />
+        </div>
+        <div class="testimonials-heading">
+          <div class="heading-title">
+            <span class="heading-main">Student</span>
+            <span class="heading-highlight">testimonials</span>
+          </div>
+          <div class="heading-subtitle">Our Students, Our Pride!</div>
+        </div>
+
+        <div class="students-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonials-grid">
+                <div class="testimonial-card">
+                  <div class="student-image-wrapper">
+                    <img
+                      src="./testimonials/student.svg"
+                      class="student-image"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <h6 class="testimonial-text">
+                      "Throughout my residency in Gujarat, I have been intrigued
+                      by the vivacious culture and the hospitality of the
+                      natives. I have found Gujarat to be very safe and
+                      opportunity, promising state."
+                    </h6>
+                    <div class="student-details">
+                      <p class="student-name">Priti Sharma</p>
+                      <p class="student-origin">from Assam State</p>
+                      <p class="student-course">B.Tech(CE), 2019-2023</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="student-image-wrapper">
+                    <img
+                      src="./testimonials/student2.svg"
+                      class="student-image"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <h6 class="testimonial-text">
+                      “Admission Team of Ganpat University assisted me, not only
+                      up to the Admission & Study VISA process – but they also
+                      extended their support in many other areas.”
+                    </h6>
+                    <div class="student-details">
+                      <p class="student-name">Varaidzo Soka</p>
+                      <p class="student-origin">from Zimbabwe</p>
+                      <p class="student-course">B.Pharm</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="student-image-wrapper">
+                    <img
+                      src="./testimonials/student3.svg"
+                      class="student-image"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <h6 class="testimonial-text">
+                      “Ganpat University is one of the best destinations in
+                      India to pursue your career, with excellent sports
+                      facilities, cultural practices and zero racism. It turned
+                      out to be comfortably my second home.”
+                    </h6>
+                    <div class="student-details">
+                      <p class="student-name">B.Pharm</p>
+                      <p class="student-origin">from Madagascar</p>
+                      <p class="student-course">
+                        Diploma of Engineering, CE 2020-2023
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonials-grid">
+                <div class="testimonial-card">
+                  <div class="student-image-wrapper">
+                    <img
+                      src="./testimonials/student.svg"
+                      class="student-image"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <h6 class="testimonial-text">
+                      "Throughout my residency in Gujarat, I have been intrigued
+                      by the vivacious culture and the hospitality of the
+                      natives. I have found Gujarat to be very safe and
+                      opportunity, promising state."
+                    </h6>
+                    <div class="student-details">
+                      <p class="student-name">Priti Sharma</p>
+                      <p class="student-origin">from Assam State</p>
+                      <p class="student-course">B.Tech(CE), 2019-2023</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="student-image-wrapper">
+                    <img
+                      src="./testimonials/student2.svg"
+                      class="student-image"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <h6 class="testimonial-text">
+                      “Admission Team of Ganpat University assisted me, not only
+                      up to the Admission & Study VISA process – but they also
+                      extended their support in many other areas.”
+                    </h6>
+                    <div class="student-details">
+                      <p class="student-name">Varaidzo Soka</p>
+                      <p class="student-origin">from Zimbabwe</p>
+                      <p class="student-course">B.Pharm</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial-card">
+                  <div class="student-image-wrapper">
+                    <img
+                      src="./testimonials/student3.svg"
+                      class="student-image"
+                    />
+                  </div>
+                  <div class="testimonial-content">
+                    <h6 class="testimonial-text">
+                      “Ganpat University is one of the best destinations in
+                      India to pursue your career, with excellent sports
+                      facilities, cultural practices and zero racism. It turned
+                      out to be comfortably my second home.”
+                    </h6>
+                    <div class="student-details">
+                      <p class="student-name">B.Pharm</p>
+                      <p class="student-origin">from Madagascar</p>
+                      <p class="student-course">
+                        Diploma of Engineering, CE 2020-2023
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- international-students -->
+    <section class="international-students my-container">
+      <h4 class="section-heading">
+        Proud to have <span class="highlight">International</span> students
+      </h4>
+      <div class="student-info-container">
+        <img class="main-image" src="./internationalStudents/img1.svg" />
+        <div class="flags-container">
+          <div class="flags-row">
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag1.svg" />
+              <p class="country-name">Zimbabwe</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag2.svg" />
+              <p class="country-name">Madagascar</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag3.svg" />
+              <p class="country-name">Turkey</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag4.svg" />
+              <p class="country-name">Liberia</p>
+            </div>
+          </div>
+          <div class="flags-row">
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag1.svg" />
+              <p class="country-name">Zimbabwe</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag2.svg" />
+              <p class="country-name">Madagascar</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag3.svg" />
+              <p class="country-name">Turkey</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag4.svg" />
+              <p class="country-name">Liberia</p>
+            </div>
+          </div>
+          <div class="flags-row">
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag1.svg" />
+              <p class="country-name">Zimbabwe</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag2.svg" />
+              <p class="country-name">Madagascar</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag3.svg" />
+              <p class="country-name">Turkey</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag4.svg" />
+              <p class="country-name">Liberia</p>
+            </div>
+          </div>
+          <div class="flags-row">
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag1.svg" />
+              <p class="country-name">Zimbabwe</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag2.svg" />
+              <p class="country-name">Madagascar</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag3.svg" />
+              <p class="country-name">Turkey</p>
+            </div>
+            <div class="divider"></div>
+            <div class="flag-group">
+              <img class="flag-image" src="./internationalStudents/flag4.svg" />
+              <p class="country-name">Liberia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ignite-section -->
+    <section class="ignite-section">
+      <img src="Group.svg" alt="" class="ignite-section-img" />
+      <div class="content-wrapper">
+        <h1 class="main-heading">
+          Ignite your <span class="highlight-red">potential</span>
+        </h1>
+        <p class="sub-heading">This is the path to your dream career.</p>
+      </div>
+      <button class="cta-button" tabindex="0">Apply Now</button>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer-section">
+      <div class="footer-content my-container">
+        <div class="footer-logo-row">
+          <div class="footer-logo-container">
+            <img src="./ganpatLogo.svg" alt="Ganpat Logo" />
+          </div>
+          <div class="footer-description">
+            <div class="description-text">
+              300 acre campus equipped with modern infrastructure and supportive
+              learning environment
+            </div>
+            <div class="hashtags">
+              <div class="hashtag">
+                <span class="red">#</span
+                ><span class="white">StudentsFirst</span>
+              </div>
+              <div class="hashtag">
+                <span class="red">#</span
+                ><span class="white">CharacterMust</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-info">
+          <div class="location-info">
+            <div class="info-header">
+              <img src="./footer-icon/locate.svg" class="map-icon" />
+              <h3 class="info-title">Locate Us</h3>
+            </div>
+            <p class="address">
+              <strong>Ganpat University</strong><br />
+              Ganpat Vidyanagar, Mehsana-Gandhinagar Highway, North Gujarat,
+              INDIA, PO - 384012
+            </p>
+          </div>
+          <div class="contact-info">
+            <div class="info-header">
+              <img src="./footer-icon/contactUs.svg" class="contact-icon" />
+              <h3 class="info-title">Contact Us</h3>
+            </div>
+            <div class="national-admissions">
+              <h4>For National & Domestic Admissions</h4>
+              <div class="phone-info">
+                <img src="./footer-icon/phone.svg" />
+                <p><strong>Mo.</strong> : +91-8100616161</p>
+              </div>
+              <div class="email-info">
+                <img src="./footer-icon/email.svg" />
+                <p><strong>Email</strong> : admission@ganpatuniversity.ac.in</p>
+              </div>
+            </div>
+            <div class="international-admissions">
+              <h4>For International Admissions</h4>
+              <div class="phone-info">
+                <img src="./footer-icon/phone.svg" />
+                <p><strong>Mo.</strong> : +91-6359663001</p>
+              </div>
+              <div class="email-info">
+                <img src="./footer-icon/email.svg" />
+                <p>
+                  <strong>Email</strong> : int.admission@ganpatuniversity.ac.in
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social-media">
+          <h3 class="social-title">Follow Us</h3>
+          <div class="social-icons">
+            <a class="facebook-icon">
+              <img src="./footer-icon/facebook.svg" />
+            </a>
+            <a class="youtube-icon">
+              <img src="./footer-icon/youTube.svg" />
+            </a>
+            <a class="instagram-icon">
+              <img src="./footer-icon/insta.svg" />
+            </a>
+            <a class="linkedin-icon">
+              <img src="./footer-icon/linkedin.svg" />
+            </a>
+            <a class="X-icon">
+              <img src="./footer-icon/X.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    var swiper = new Swiper(".swiper-container", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 2000,
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+    });
+
+    var swiper = new Swiper(".students-swiper", {
+      loop: true,
+      pagination: {
+        el: ".students-swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 2000,
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+    });
+
+    var swiper1 = new Swiper(".swiper-row1", {
+      loop: true,
+      spaceBetween: 36,
+      slidesPerView: 10,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      speed: 3000,
+      freeMode: true,
+      freeModeMomentum: true,
+      on: {
+        slideChange: function () {
+          swiper.update();
+        },
+      },
+    });
+
+    var swiper2 = new Swiper(".swiper-row2", {
+      loop: true,
+      spaceBetween: 36,
+      slidesPerView: 10,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        reverseDirection: true,
+      },
+      speed: 3000,
+      freeMode: true,
+      freeModeMomentum: true,
+      on: {
+        slideChange: function () {
+          swiper.update();
+        },
+      },
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const programTypes = document.querySelectorAll(".program-type");
+      const featureContents = document.querySelectorAll(".feature-content");
+
+      programTypes.forEach((program) => {
+        program.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          programTypes.forEach((p) =>
+            p.classList.remove("program-type-active")
+          );
+
+          this.classList.add("program-type-active");
+
+          const selectedType = this.getAttribute("data-type");
+
+          featureContents.forEach(
+            (content) => (content.style.display = "none")
+          );
+
+          document.querySelector(
+            `.feature-content[data-type="${selectedType}"]`
+          ).style.display = "block";
+        });
+      });
+    });
+  </script>
+</html>
